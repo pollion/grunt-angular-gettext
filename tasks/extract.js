@@ -78,13 +78,13 @@ module.exports = function (grunt) {
                     var node, plural, str;
                     node = $(n);
                     if (typeof node.attr('translate') !== 'undefined') {
-                        str = node.html();
+                        str = node.html() || node.attr('data-translate-dictionary');
                         plural = node.attr('translate-plural');
                         addString(filename, str, plural);
                     }
 
                     if (typeof node.attr('data-translate') !== 'undefined') {
-                        str = node.attr('data-translate');
+                        str = node.html() || node.attr('data-translate-dictionary');
                         plural = node.attr('data-translate-plural');
                         addString(filename, str, plural);
                     }
