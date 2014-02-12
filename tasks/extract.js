@@ -88,6 +88,13 @@ module.exports = function (grunt) {
                         plural = node.attr('data-translate-plural');
                         addString(filename, str, plural);
                     }
+
+                    if (typeof node.attr('translate') == 'undefined' && typeof node.attr('data-translate') !== 'undefined' && node.attr('data-translate-dictionary') !== 'undefined') {
+                        str = node.attr('data-translate-dictionary');
+                        plural = node.attr('translate-plural');
+                        addString(filename, str, plural);
+                    }
+
                 });
 
                 var matches;
