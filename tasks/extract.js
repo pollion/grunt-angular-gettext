@@ -84,7 +84,7 @@ module.exports = function (grunt) {
                     }
 
                     if (typeof node.attr('data-translate') !== 'undefined') {
-                        str = node.html();
+                        str = node.attr('data-translate');
                         plural = node.attr('data-translate-plural');
                         addString(filename, str, plural);
                     }
